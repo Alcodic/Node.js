@@ -1,5 +1,11 @@
 const mongoose = require('mongoose');
-const mongoURL = 'mongodb://localhost:27017/restaurant2';
+require('dotenv').config();
+//below code to connect to local database
+//const mongoURL = process.env.MONGODB_URL_LOCAL;
+
+//below code to connect to online Atlas URL
+const mongoURL = process.env.MONGODB_URL;
+
 mongoose.connect(mongoURL,{
   useNewUrlParser:true,
   useUnifiedTopology:true,
